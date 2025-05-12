@@ -1,0 +1,143 @@
+.movie-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+.movie-poster {
+  position: relative;
+  aspect-ratio: 2/3;
+  width: 100%;
+  border-bottom: 2px solid #333;
+}
+
+.movie-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+.movie-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.85)
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+
+.movie-card:hover .movie-overlay {
+  opacity: 1;
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: white;
+  font-size: 1.8rem;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.favorite-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.favorite-btn.active {
+  color: #ff4757;
+  box-shadow: 0 0 12px rgba(255, 71, 87, 0.7);
+}
+
+.rating-select {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid #444;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.rating-select:hover {
+  background-color: #444;
+  color: #ffd700;
+}
+
+.movie-info {
+  padding: 1.2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.movie-info h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #eee;
+  margin: 0;
+}
+
+.movie-info p {
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+.user-rating {
+  color: #ffd700;
+  font-size: 0.95rem;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .movie-card {
+      font-size: 0.9rem;
+  }
+
+  .movie-info {
+      padding: 0.8rem;
+  }
+
+  .favorite-btn {
+      width: 36px;
+      height: 36px;
+      font-size: 1.4rem;
+  }
+
+  .rating-select {
+      padding: 0.4rem;
+  }
+}

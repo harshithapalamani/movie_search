@@ -1,0 +1,133 @@
+/* Home Container */
+.home {
+  padding: 2rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #141414;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Search Form */
+.search-form {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-size: 1rem;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+  background-color: #333;
+}
+
+.search-button {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(90deg, #e50914, #f40612);
+  color: white;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+}
+
+.search-button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #f40612, #e50914);
+}
+
+/* Error Message */
+.error-message {
+  color: #ff4c4c;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Loading Spinner */
+.loading {
+  text-align: center;
+  color: #999;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+/* Movies Grid */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* No Results */
+.no-results {
+  text-align: center;
+  color: #777;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 639px) {
+  .home {
+      padding: 1rem;
+  }
+
+  .search-form {
+      margin-bottom: 1rem;
+  }
+}
+
+/* Smooth Scrolling */
+body {
+  scroll-behavior: smooth;
+}
+
+/* Enhancements */
+.search-input::placeholder {
+  color: #777;
+  font-style: italic;
+}
+
+.movies-grid .movie-card {
+  transform: scale(1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movies-grid .movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
